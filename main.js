@@ -9,9 +9,23 @@ const color = [
     '#324D5C',
     '#F0CA4D'
 ]
+let soluongphaohoakhino = 70
+
+
 
 const fireWorksArray = []
 const burstFireWorkArrays = []
+
+const showTag = document.getElementById('show_so_luong')
+const inputTag = document.getElementById('input')
+
+// console.log(inputTag);
+inputTag.onchange = (e)=>{
+    soluongphaohoakhino=e.target.value
+    showTag.innerText = soluongphaohoakhino
+}
+
+
 class FireWork{
     constructor(){
         this.x = Math.random()*1340 + 70
@@ -95,7 +109,7 @@ class BurstFireWorkArray{
     }
     setBurstFireWorkArray(x,y){
         let array = []
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < soluongphaohoakhino; i++) {
             const burstFireWork = new BurstFireWork(x,y)
             array = [...array,burstFireWork]
 
